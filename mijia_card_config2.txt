@@ -1,0 +1,229 @@
+{
+	"models": [
+		"viomi.aircondition.v6",
+		"viomi.aircondition.v7",
+		"viomi.aircondition.v8",
+		"viomi.aircondition.v9",
+		"viomi.aircondition.v10"
+	],
+	"props": [{
+			"prop_key": "prop.power",
+			"supportType": [
+				1
+			],
+			"switchStatus": [
+				"on"
+			],
+			"prop_name": {
+				"zh_CN": "开关",
+				"en": "开关"
+			},
+			"prop_extra": [{
+					"value": "on",
+					"desc": {
+						"zh_CN": "开",
+						"en": "开"
+					}
+				},
+				{
+					"value": "off",
+					"desc": {
+						"zh_CN": "关",
+						"en": "关"
+					}
+				}
+			]
+		},
+		{
+			"prop_key": "prop.temp",
+			"prop_unit": "℃",
+			"format": "%.1f",
+			"ratio": 1,
+			"supportType": [
+				1
+			],
+			"prop_name": {
+				"zh_CN": "温度",
+				"en": "temp"
+			},
+			"prop_extra": [{
+				"param_range": {
+					"min": 16,
+					"max": 31
+				}
+			}]
+		},
+		{
+			"prop_key": "prop.mode",
+			"supportType": [
+				1
+			],
+			"prop_name": {
+				"zh_CN": "模式选择",
+				"en": "模式选择"
+			},
+			"switchStatus": [
+				"cold",
+				"hot",
+				"dry"
+			],
+			"prop_extra": [{
+					"value": "cold",
+					"desc": {
+						"zh_CN": "制冷",
+						"en": "制冷"
+					}
+				},
+				{
+					"value": "hot",
+					"desc": {
+						"zh_CN": "制热",
+						"en": "制热"
+					}
+				},
+				{
+					"value": "dry",
+					"desc": {
+						"zh_CN": "除湿",
+						"en": "除湿"
+					}
+				}
+			]
+		}
+	],
+	"cards": {
+		"layout_type": 3,
+		"card_items": [{
+				"prop_key": "prop.power",
+				"supportGrid": 1,
+				"cardType": 1,
+				"operation": [{
+						"button_name": {
+							"en": "开关",
+							"zh_HK": "开关",
+							"zh_CN": "开关",
+							"zh_TW": "开关"
+						},
+						"button_image": {
+							"selected": "title_btn_power_on",
+							"unable": "title_btn_power_unable",
+							"normal": "title_btn_power_off"
+						},
+						"prop_value": "off",
+						"method": "set_power",
+						"param": [
+							1
+						]
+					},
+					{
+						"button_name": {
+							"en": "开关",
+							"zh_HK": "开关",
+							"zh_CN": "开关",
+							"zh_TW": "开关"
+						},
+						"button_image": {
+							"selected": "title_btn_power_on",
+							"unable": "title_btn_power_unable",
+							"normal": "title_btn_power_off"
+						},
+						"prop_value": "on",
+						"method": "set_power",
+						"param": [
+							0
+						]
+					}
+				]
+			},
+			{
+				"prop_key": "prop.mode",
+				"cardType": 3,
+				"operation": [{
+						"button_name": {
+							"zh_CN": "制冷",
+							"en": "制冷"
+						},
+						"button_image": {
+							"selected": "popup_icon_cold_hig",
+							"unable": "popup_icon_cold_unable",
+							"normal": "popup_icon_cold_nor"
+						},
+						"prop_value": "cold",
+						"method": "set_mode",
+						"param": [
+							2
+						],
+						"disable_status": [{
+							"key": "prop.power",
+							"value": 0
+						}]
+					},
+					{
+						"button_name": {
+							"zh_CN": "制热",
+							"en": "制热"
+						},
+						"button_image": {
+							"selected": "popup_icon_sun_hig",
+							"unable": "popup_icon_sun_unable",
+							"normal": "popup_icon_sun_nor"
+						},
+						"prop_value": "hot",
+						"method": "set_mode",
+						"param": [
+							5
+						],
+						"disable_status": [{
+							"key": "prop.power",
+							"value": 0
+						}]
+					},
+					{
+						"button_name": {
+							"zh_CN": "除湿",
+							"en": "除湿"
+						},
+						"button_image": {
+							"selected": "popup_icon_sun_hig",
+							"unable": "popup_icon_sun_unable",
+							"normal": "popup_icon_sun_nor"
+						},
+						"prop_value": "dry",
+						"method": "set_mode",
+						"param": [
+							3
+						],
+						"disable_status": [{
+							"key": "prop.power",
+							"value": 0
+						}]
+					}
+				]
+			},
+			{
+				"prop_key": "prop.temp",
+				"cardType": 4,
+				"param_delta": 0.5,
+				"param_range": {
+					"min": 16,
+					"max": 31
+				},
+				"param_type": [{
+						"index": 0,
+						"type": "JSONArray"
+					},
+					{
+						"type": "double"
+					}
+				],
+				"operation": [{
+					"method": "set_temp",
+					"disable_status": [{
+						"key": "prop.power",
+						"value": 0
+					}]
+				}]
+			}
+		]
+	}
+}

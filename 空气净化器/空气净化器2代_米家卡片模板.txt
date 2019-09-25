@@ -1,0 +1,252 @@
+﻿{
+	"models": [
+		"airdog.airpurifier.x7sm",
+		"airdog.airpurifier.x7",
+		"airdog.airpurifier.x5"
+	],
+	"props": [{
+			"prop_key": "prop.pm",
+			"format": "%.0f",
+			"prop_unit": "μg/m³",
+			"ratio": 1,
+			"prop_name": {
+				"zh_CN": "PM2.5",
+				"en": "PM2.5",
+				"zh_TW": "PM2.5",
+				"zh_HK": "PM2.5"
+			},
+			"prop_extra": [{
+					"param_range": {
+						"min": 0,
+						"max": 50
+					},
+					"text_color": "#FF30C480",
+					"desc": {
+						"zh_CN": "优",
+						"en": "Excellent",
+						"zh_TW": "優",
+						"zh_HK": "優"
+					}
+				},
+				{
+					"param_range": {
+						"min": 51,
+						"max": 100
+					},
+					"text_color": "#FF76C430",
+					"desc": {
+						"zh_CN": "良",
+						"en": "Fine",
+						"zh_TW": "良",
+						"zh_HK": "良"
+					}
+				},
+				{
+					"param_range": {
+						"min": 101,
+						"max": 150
+					},
+					"text_color": "#FFE6BB25",
+					"desc": {
+						"zh_CN": "轻度污染",
+						"en": "Light pollution",
+						"zh_TW": "輕度污染",
+						"zh_HK": "輕度污染"
+					}
+				},
+				{
+					"param_range": {
+						"min": 151,
+						"max": 200
+					},
+					"text_color": "#FFE67D19",
+					"desc": {
+						"zh_CN": "中度污染",
+						"en": "Moderate pollution",
+						"zh_TW": "中度污染",
+						"zh_HK": "中度污染"
+					}
+				},
+				{
+					"param_range": {
+						"min": 201,
+						"max": 300
+					},
+					"text_color": "#CCF13312",
+					"desc": {
+						"zh_CN": "重度污染",
+						"en": "Heavy pollution",
+						"zh_TW": "重度污染",
+						"zh_HK": "重度污染"
+					}
+				},
+				{
+					"param_range": {
+						"min": 301,
+						"max": 2000
+					},
+					"text_color": "#E5B60E11",
+					"desc": {
+						"zh_CN": "严重污染",
+						"en": "Serious pollution",
+						"zh_TW": "嚴重污染",
+						"zh_HK": "嚴重污染"
+					}
+				}
+			]
+		},
+		{
+			"prop_key": "prop.mode",
+			"prop_name": {
+				"zh_CN": "模式",
+				"en": "Mode",
+				"zh_TW": "模式",
+				"zh_HK": "模式"
+			},
+			"switchStatus": [
+				"auto",
+				"sleep"
+			]
+		},
+		{
+			"prop_key": "prop.power",
+			"prop_name": {
+				"zh_CN": "电源",
+				"en": "Power",
+				"zh_TW": "電源",
+				"zh_HK": "電源"
+			},
+			"switchStatus": [
+				"on"
+			],
+			"prop_extra": [{
+					"value": "on",
+					"desc": {
+						"en": "On",
+						"zh_HK": "開",
+						"zh_CN": "开",
+						"zh_TW": "開"
+					}
+				},
+				{
+					"value": "off",
+					"desc": {
+						"en": "Off",
+						"zh_HK": "關",
+						"zh_CN": "关",
+						"zh_TW": "關"
+					}
+				}
+			]
+		},
+		{
+			"prop_key": "prop.lock",
+			"prop_name": {
+				"zh_CN": "童锁",
+				"en": "Lock",
+				"zh_TW": "童鎖",
+				"zh_HK": "童鎖"
+			},
+			"switchStatus": [
+				"lock",
+				"unlock"
+			]
+		}
+	],
+	"cards": {
+		"layout_type": 3,
+		"card_items": [{
+				"cardType": 1,
+				"prop_key": "prop.power",
+				"operation": [{
+						"button_image": {
+							"normal": "title_btn_power_off",
+							"selected": "title_btn_power_on",
+							"unable": "title_btn_power_unable"
+						},
+						"button_name": {
+							"zh_CN": "电源",
+							"en": "Power",
+							"zh_TW": "電源",
+							"zh_HK": "電源"
+						},
+						"prop_value": "off",
+						"method": "set_power",
+						"param": [
+							1
+						]
+					},
+					{
+						"button_image": {
+							"normal": "title_btn_power_off",
+							"selected": "title_btn_power_on",
+							"unable": "title_btn_power_unable"
+						},
+						"button_name": {
+							"en": "Power",
+							"zh_CN": "开关",
+							"zh_TW": "開關",
+							"zh_HK": "開關"
+						},
+						"prop_value": "on",
+						"method": "set_power",
+						"param": [
+							0
+						]
+					}
+				]
+			},
+			{
+				"cardType": 7,
+				"prop_key": "prop.pm"
+			},
+			{
+				"cardType": 3,
+				"prop_key": "prop.mode",
+				"operation": [{
+						"button_name": {
+							"en": "Auto",
+							"zh_CN": "自动"
+						},
+						"button_image": {
+							"normal": "btn_auto_off",
+							"selected": "btn_auto_on",
+							"unable": "btn_auto_unable"
+						},
+						"prop_value": "auto",
+						"method": "set_wind",
+						"param": [
+							0,
+							1
+						],
+						"disable_status": [{
+							"key": "prop.power",
+							"value": "off"
+						}]
+					},
+					{
+						"button_name": {
+							"en": "Sleep",
+							"zh_CN": "睡眠"
+						},
+						"button_image": {
+							"normal": "btn_sleep_off",
+							"selected": "btn_sleep_on",
+							"unable": "btn_sleep_unable"
+						},
+						"prop_value": "sleep",
+						"method": "set_wind",
+						"param": [
+							2,
+							1
+						],
+						"disable_status": [{
+							"key": "prop.power",
+							"value": "off"
+						}]
+					}
+				]
+			}
+		]
+	}
+}
