@@ -12,21 +12,21 @@
 				1
 			],
 			"switchStatus": [
-				"on"
+				1
 			],
 			"prop_name": {
 				"zh_CN": "开关",
 				"en": "开关"
 			},
 			"prop_extra": [{
-					"value": "on",
+					"value": 1,
 					"desc": {
 						"zh_CN": "开",
 						"en": "开"
 					}
 				},
 				{
-					"value": "off",
+					"value": 0,
 					"desc": {
 						"zh_CN": "关",
 						"en": "关"
@@ -52,6 +52,7 @@
 					"max": 31
 				}
 			}]
+
 		},
 		{
 			"prop_key": "prop.mode",
@@ -63,29 +64,35 @@
 				"en": "模式选择"
 			},
 			"switchStatus": [
-				"cold",
-				"hot",
-				"dry"
+				5,
+				3
 			],
 			"prop_extra": [{
-					"value": "cold",
+					"value": 2,
 					"desc": {
 						"zh_CN": "制冷",
 						"en": "制冷"
 					}
 				},
 				{
-					"value": "hot",
+					"value": 5,
 					"desc": {
 						"zh_CN": "制热",
 						"en": "制热"
 					}
 				},
 				{
-					"value": "dry",
+					"value": 3,
 					"desc": {
 						"zh_CN": "除湿",
 						"en": "除湿"
+					}
+				},
+				{
+					"value": 4,
+					"desc": {
+						"en": "送风",
+						"zh_CN": "送风"
 					}
 				}
 			]
@@ -109,7 +116,7 @@
 							"unable": "title_btn_power_unable",
 							"normal": "title_btn_power_off"
 						},
-						"prop_value": "off",
+						"prop_value": 0,
 						"method": "set_power",
 						"param": [
 							1
@@ -127,7 +134,7 @@
 							"unable": "title_btn_power_unable",
 							"normal": "title_btn_power_off"
 						},
-						"prop_value": "on",
+						"prop_value": 1,
 						"method": "set_power",
 						"param": [
 							0
@@ -148,7 +155,7 @@
 							"unable": "popup_icon_cold_unable",
 							"normal": "popup_icon_cold_nor"
 						},
-						"prop_value": "cold",
+						"prop_value": 2,
 						"method": "set_mode",
 						"param": [
 							2
@@ -168,7 +175,7 @@
 							"unable": "popup_icon_sun_unable",
 							"normal": "popup_icon_sun_nor"
 						},
-						"prop_value": "hot",
+						"prop_value": 5,
 						"method": "set_mode",
 						"param": [
 							5
@@ -188,7 +195,7 @@
 							"unable": "popup_icon_sun_unable",
 							"normal": "popup_icon_sun_nor"
 						},
-						"prop_value": "dry",
+						"prop_value": 3,
 						"method": "set_mode",
 						"param": [
 							3

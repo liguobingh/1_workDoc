@@ -1,0 +1,115 @@
+﻿{
+    "models": [
+        "viomi.waterheater.u7",
+        "viomi.waterheater.u8",
+	"viomi.waterheater.u11",
+	"viomi.waterheater.u14",
+	"viomi.waterheater.u15",
+	"viomi.waterheater.u16",
+	"viomi.waterheater.e7",
+	"viomi.waterheater.e8"
+    ],
+    "props": [
+        {
+            "prop_key": "prop.targetTemp",
+            "format": "%.0f",
+            "prop_unit": "℃",
+            "ratio": 1,
+            "prop_name": {
+                "en": "设置水温",
+                "zh_CN": "设置水温"
+            },
+            "prop_extra": [
+                {
+                    "param_range": {
+                        "min": 30,
+                        "max": 65
+                    }
+                }
+            ]
+        },
+        {
+            "prop_key": "prop.washStatus",
+            "format": "%.0f",
+            "prop_unit": "",
+            "ratio": 1,
+            "prop_name": {
+                "en": "工作状态",
+                "zh_CN": "工作状态"
+            },
+            "prop_extra": [
+                {
+                    "value": 0,
+                    "desc": {
+                        "en": "关机",
+                        "zh_CN": "关机"
+                    }
+                },
+                {
+                    "value": 1,
+                    "desc": {
+                        "en": "已开机",
+                        "zh_CN": "已开机"
+                    }
+                },
+                {
+                    "value": 2,
+                    "desc": {
+                        "en": "用水中",
+                        "zh_CN": "用水中"
+                    }
+                },
+                {
+                    "value": 3,
+                    "desc": {
+                        "en": "预热中",
+                        "zh_CN": "预热中"
+                    }
+                }
+            ]
+        },
+        {
+            "prop_key": "prop.velocity",
+            "format": "%.0f",
+            "prop_unit": "",
+            "ratio": 1,
+            "prop_name": {
+                "en": "水流速",
+                "zh_CN": "水流速"
+            }
+        },
+        {
+            "prop_key": "prop.waterTemp",
+            "format": "%.0f",
+            "prop_unit": "°C",
+            "ratio": 1,
+            "prop_name": {
+                "en": "当前水温",
+                "zh_CN": "当前水温"
+            }
+        },
+        {
+            "prop_key": "prop.errStatus",
+            "format": "%.0f",
+            "prop_unit": "",
+            "ratio": 1,
+            "prop_name": {
+                "en": "错误",
+                "zh_CN": "错误"
+            }
+        }
+    ],
+    "cards": {
+        "layout_type": 2,
+        "card_items": [
+            {
+                "cardType": 7,
+                "prop_key": "prop.targetTemp"
+            },
+            {
+                "cardType": 8,
+                "prop_key": "prop.washStatus"
+            }
+        ]
+    }
+}
