@@ -87,13 +87,6 @@
 						"zh_CN": "除湿",
 						"en": "除湿"
 					}
-				},
-				{
-					"value": 4,
-					"desc": {
-						"en": "送风",
-						"zh_CN": "送风"
-					}
 				}
 			]
 		}
@@ -191,9 +184,9 @@
 							"en": "除湿"
 						},
 						"button_image": {
-							"selected": "popup_icon_sun_hig",
-							"unable": "popup_icon_sun_unable",
-							"normal": "popup_icon_sun_nor"
+							"selected": "Dry_hig",
+							"unable": "Dry_unable",
+							"normal": "Dry_nor"
 						},
 						"prop_value": 3,
 						"method": "set_mode",
