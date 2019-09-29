@@ -35,7 +35,7 @@
 			]
 		},
 		{
-			"prop_key": "prop.temp",
+			"prop_key": "prop.settemp",
 			"prop_unit": "℃",
 			"format": "%.1f",
 			"ratio": 1,
@@ -43,8 +43,8 @@
 				1
 			],
 			"prop_name": {
-				"zh_CN": "温度",
-				"en": "temp"
+				"zh_CN": "设置温度",
+				"en": "settemp"
 			},
 			"prop_extra": [{
 				"param_range": {
@@ -201,7 +201,7 @@
 				]
 			},
 			{
-				"prop_key": "prop.temp",
+				"prop_key": "prop.settemp",
 				"cardType": 4,
 				"param_delta": 0.5,
 				"param_range": {
