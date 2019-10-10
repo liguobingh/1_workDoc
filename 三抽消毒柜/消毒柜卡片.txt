@@ -1,0 +1,65 @@
+{
+	"models": [
+		"viomi.steriliser.v1"
+	],
+	"props": [{
+		"prop_key": "prop.workStatus",
+		"format": "%.0f",
+		"prop_unit": "",
+		"ratio": 1,
+		"prop_name": {
+			"en": "Current Status",
+			"zh_CN": "当前状态"
+		},
+		"prop_extra": [{
+				"value": 0,
+				"desc": {
+					"en": "Shutdown",
+					"zh_CN": "已关机"
+				}
+			},
+			{
+				"value": 1,
+				"desc": {
+					"en": "Standing by",
+					"zh_CN": "待机中"
+				}
+			},
+			{
+				"value": 2,
+				"desc": {
+					"en": "Drying",
+					"zh_CN": "烘干"
+				}
+			},
+			{
+				"value": 3,
+				"desc": {
+					"en": "Sterilizing",
+					"zh_CN": "消毒"
+				}
+			},
+			{
+				"value": 4,
+				"desc": {
+					"en": "Auto",
+					"zh_CN": "全自动"
+				}
+			},
+			{
+				"value": 5,
+				"desc": {
+					"en": "Auto drying",
+					"zh_CN": "关门自动烘干"
+				}
+			}
+		]
+	}],
+	"cards": {
+		"layout_type": 0,
+		"card_items": [{
+			"cardType": 8,
+			"prop_key": "prop.workStatus"
+		}]
+	}
+}
